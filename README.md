@@ -4,7 +4,7 @@ A zip generator for files in local or remote repository
 
 ## Installation
 
-1. Download the repository and place the ```.sh``` file at ```.local/bin``` folder
+1. Download the repository and place the ```.sh``` file at ```.local/bin``` folder (if you don't have this folder create it)
 2. Insert the following lines at your .zshrc or .bashrc:
 ```
 source "$HOME/.local/bin/zipper.sh"
