@@ -10,7 +10,7 @@ A zip generator for files in local or remote repository
 source "$HOME/.local/bin/zipper.sh"
 ```
 3. Reset your bash or simply type ```source .zshrc``` or ```source .bashrc``` if you're not using oh-my-zsh.
-4. It's recommended to add tozip folder in your 
+4. It's recommended to add ```tozip``` folder in your ```.gitignore``` file of your local repository
 5. You're ready to go
 
 ## Usage
