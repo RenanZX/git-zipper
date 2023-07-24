@@ -24,6 +24,35 @@ git-zipper() {
     cd $caminho_abs/tozip
     zip -r files *
     cd $caminho_abs
+  elif [[ $1 == '-d' ]]; then
+    argv=("$@")
+    for ((i=2;i<=$#;i++))
+    do
+      var=${argv[i]}
+      name_folder=$(basename $var)
+      posicao=$((${#caminho_abs}+1))
+      if [[ $var != *"/"* ]]; then
+        caminho=$(find ~+ -type d -name "$var")
+        val=$(awk -v FV=$posicao '{print substr($0, FV)}' <<< $caminho)
+      else
+        if [[ $var == .* ]]; then
+          caminho=$var
+        elif [[ $var == /* ]]; then
+          caminho=".$var"
+        else
+          caminho="./$var"
+        fi
+        val=$(awk '{print substr($0, 2)}' <<< $caminho)
+      fi
+
+      mkdir -p "$caminho_abs/tozip${val}"
+      cp -R $caminho $caminho_abs/tozip${val%$name_folder}
+      echo "copy to $caminho_abs/tozip$val"
+    done
+
+    cd $caminho_abs/tozip
+    zip -r files *
+    cd $caminho_abs
   else
     for var in "$@"
     do
