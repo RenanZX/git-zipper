@@ -4,13 +4,13 @@ A zip generator for files in local or remote repository
 
 ## Installation
 
-1. Download the repository and place the ```.sh``` file at ```.local/bin``` folder
+1. Download the repository and place the ```.sh``` file at ```.local/bin``` folder (if you don't have this folder create it)
 2. Insert the following lines at your .zshrc or .bashrc:
 ```
 source "$HOME/.local/bin/zipper.sh"
 ```
 3. Reset your bash or simply type ```source .zshrc``` or ```source .bashrc``` if you're not using oh-my-zsh.
-4. It's recommended to add tozip folder in your 
+4. It's recommended to add ```tozip``` folder in your ```.gitignore``` file of your local repository
 5. You're ready to go
 
 ## Usage
